@@ -14,9 +14,21 @@ public class cube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        
+    }
+
+    private void OnMouseDrag()
+    {
+        this.transform.Rotate(0.0f, rotaionSpeed, 0.0f);
+
+        if (Input.GetMouseButtonUp(0))
         {
-            this.transform.Rotate(0.0f, rotaionSpeed, 0.0f);
+            this.transform.Rotate(0.0f, rotaionSpeed*0.95f, 0.0f);
         }
+    }
+
+    public void cubeRoate()
+    {
+        this.transform.Rotate(0.0f, rotaionSpeed, 0.0f);
     }
 }
